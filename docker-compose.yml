@@ -1,0 +1,11 @@
+version: '3'
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"   # exposes Jupyter on localhost:8888
+    volumes:
+      - .:/home/jovyan/work  # mount your repo into the container
+    environment:
+      - GRANT_SUDO=yes
+      - JUPYTER_ENABLE_LAB=yes
